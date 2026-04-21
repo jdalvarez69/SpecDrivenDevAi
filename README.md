@@ -4,9 +4,8 @@ Static student portfolio built with Astro and prepared for GitHub Pages deployme
 
 ## Live Site
 
-- Status: Pending deployment
-- Deploy URL placeholder: TBD
-- Expected URL after deployment: https://jdalvarez69.github.io/SpecDrivenDevAi/
+- Status: Live
+- URL: https://jdalvarez69.github.io/SpecDrivenDevAi/
 
 ## Local Setup
 

@@ -2,7 +2,7 @@
 ## Project
 - Name: Student personal portfolio website (SpecDrivenDevAI planning project).
 - Summary: Static portfolio focused on credibility, clarity, and fast reviewer scanability.
-- Current status: Sprint 003 complete. Editorial Minimal styling, responsive behavior, and baseline accessibility improvements are implemented. No active sprint. Ready to begin Sprint 004.
+- Current status: Sprint 004 complete. Site is deployed to GitHub Pages with workflow-based deployment and updated documentation. No active sprint.
 
 ## Chosen style
 - Editorial Minimal (content-first).
@@ -15,7 +15,7 @@
 - Deployment target: GitHub Pages via GitHub Actions.
 
 ## Current active sprint
-- None. Sprint 003 is complete. Sprint 004 not yet started.
+- None. Sprint 004 is complete.
 
 ## Completed sprints + evidence links
 - Sprint 001 — COMPLETE
@@ -40,19 +40,19 @@
   - Navigation responsive at mobile breakpoints with active state
   - Focus visibility + skip link + heading structure checks passed
   - Placeholder email and repo links replaced with provided real details
+- Sprint 004 — COMPLETE
+  - Receipt: project_management/completed/sprint_004.md
+  - GitHub Pages workflow configured in `.github/workflows/deploy.yml`
+  - Live site confirmed: https://jdalvarez69.github.io/SpecDrivenDevAi/
+  - Internal navigation routes confirmed on live deployment
+  - README updated with live URL and deployment instructions
 
 ## Current deploy URL
-- Pending deployment (expected URL: https://jdalvarez69.github.io/SpecDrivenDevAi/)
+- https://jdalvarez69.github.io/SpecDrivenDevAi/
 
 ## Known issues / risks
-- No deployment workflow yet (Sprint 004 scope).
 - TODO marker remains for LinkedIn username in contact page.
-- resume.pdf not yet added to public/ — needed before deployment.
+- resume.pdf may be missing from `public/` and should be added to avoid a broken resume link.
 
 ## Next acceptance criteria
-(Sprint 004 — deployment and README completion)
-- GitHub Actions deployment workflow succeeds on push to main.
-- Public GitHub Pages URL serves latest version.
-- Home, Projects, About/Resume, and Contact are reachable on live site.
-- Key external links (email, GitHub repo, LinkedIn) work from deployed site.
-- README includes setup, build, deploy, and project update instructions.
+- TBD
