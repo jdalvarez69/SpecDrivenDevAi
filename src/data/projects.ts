@@ -14,9 +14,9 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "SpecDrivenDevAi Portfolio Site",
+    title: "Personal Portfolio Website",
     oneLineOutcome:
-      "Built and deployed a personal portfolio site with a structured sprint workflow, clear documentation, and GitHub Pages hosting.",
+      "Created and published a personal portfolio website that presents my background, contact information, and current work in one place.",
     problemContext:
       "I needed one credible place to present my background, contact information, and project work without overengineering the stack.",
     whatWasBuilt:
@@ -25,9 +25,8 @@ export const projects: Project[] = [
       "I planned and implemented the site in small sprints, prioritized readability and maintainability, and configured a GitHub Actions workflow for deployment.",
     stack: ["Astro", "TypeScript", "HTML", "CSS", "GitHub Pages", "GitHub Actions"],
     resultEvidence:
-      "The site is live on GitHub Pages with working navigation and contact links, and the repository includes planning artifacts and deployment documentation.",
+      "This website itself is the live portfolio. It is published on GitHub Pages with working navigation and contact links, and the repository includes planning artifacts and deployment documentation.",
     repoUrl: "https://github.com/jdalvarez69/SpecDrivenDevAi",
-    demoUrl: "https://jdalvarez69.github.io/SpecDrivenDevAi/",
     featured: true,
   },
 ];
