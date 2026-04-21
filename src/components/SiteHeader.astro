@@ -1,0 +1,95 @@
+---
+const currentPath = Astro.url.pathname;
+const base = import.meta.env.BASE_URL;
+const withBase = (path: string) => {
+  const cleanBase = base.endsWith('/') ? base.slice(0, -1) : base;
+  const cleanPath = path.replace(/^\//, '');
+  return `${cleanBase}/${cleanPath}`;
+};
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/about', label: 'About / Resume' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+<header>
+  <nav aria-label="Main navigation">
+    <ul>
+      {navLinks.map(({ href, label }) => (
+        <li>
+          <a href={withBase(href)} aria-current={currentPath === withBase(href) ? 'page' : undefined}>{label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    border-bottom: 1px solid #deddd8;
+    background: #ffffff;
+    padding: 0.9rem 1rem;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  nav a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2a2a25;
+    display: inline-block;
+    padding: 0.3rem 0.45rem;
+    border-radius: 2px;
+  }
+
+  nav a:hover,
+  nav a:focus-visible {
+    color: #165c96;
+    background: #f2f4f7;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  nav a[aria-current='page'] {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+  }
+
+  @media (max-width: 768px) {
+    nav ul {
+      gap: 0.4rem;
+    }
+
+    nav a {
+      font-size: 0.92rem;
+      padding: 0.25rem 0.4rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    nav ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
+    }
+
+    nav a {
+      width: 100%;
+      text-align: center;
+      border: 1px solid #e7e6e2;
+      background: #fbfbfa;
+    }
+  }
+</style>

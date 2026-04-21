@@ -1,0 +1,102 @@
+---
+import type { Project } from '../data/projects';
+
+const { project } = Astro.props as { project: Project };
+---
+<article class="project-card">
+  <h3>{project.title}</h3>
+  <p class="outcome">{project.oneLineOutcome}</p>
+
+  <p class="label">Problem</p>
+  <p>{project.problemContext}</p>
+
+  <p class="label">What was built</p>
+  <p>{project.whatWasBuilt}</p>
+
+  <p class="label">My role</p>
+  <p>{project.roleDecisions}</p>
+
+  <p class="label">Stack</p>
+  <ul class="stack-list">
+    {project.stack.map((tech) => <li>{tech}</li>)}
+  </ul>
+
+  <p class="label">Result</p>
+  <p>{project.resultEvidence}</p>
+
+  <p class="links">
+    <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">View repo →</a>
+    {project.demoUrl && (
+      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">Live demo →</a>
+    )}
+    {project.writeupUrl && (
+      <a href={project.writeupUrl} target="_blank" rel="noopener noreferrer">Write-up →</a>
+    )}
+  </p>
+</article>
+
+<style>
+  .project-card {
+    border: 1px solid #deddd8;
+    border-radius: 3px;
+    background: #ffffff;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-card :global(p:last-child),
+  .project-card :global(ul:last-child) {
+    margin-bottom: 0;
+  }
+
+  .outcome {
+    color: #4b4b43;
+    margin-bottom: 0.85rem;
+  }
+
+  .label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #5e5e54;
+    margin-top: 0.9rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .stack-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.3rem;
+    padding-left: 0;
+  }
+
+  .stack-list li {
+    background: #f2f2ee;
+    border-radius: 3px;
+    padding: 0.15rem 0.45rem;
+    font-size: 0.85rem;
+    margin-bottom: 0;
+  }
+
+  .links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 360px) {
+    .project-card {
+      padding: 1rem;
+    }
+
+    .links {
+      display: grid;
+      gap: 0.35rem;
+    }
+  }
+</style>
